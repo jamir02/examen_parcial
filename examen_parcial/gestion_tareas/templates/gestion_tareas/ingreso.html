@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Login</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'gestion_tareas/style.css'%}">
+    </head>
+    <body>
+        <section class="form-login">
+            <h5>Login</h5>
+            <form method="post" action="{% url 'gestion_tareas:index'%}">
+            {% csrf_token %} <!-- para extraer información de manera segura desde el browser al servidor-->
+                <input class = "controls" type="text" name="usuario" value="" placeholder="Usuario">
+                <input class = "controls" type="password" name="contrasena" value="" placeholder="Contraseña">
+                <button class = "buttons"  type="submit">Ingresar</button>
+            </form>
+            <p>¿Olvidaste tu Contraseña?</p>
+        </section>
+    </body>
+</html>
